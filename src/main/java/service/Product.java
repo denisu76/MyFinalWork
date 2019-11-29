@@ -14,7 +14,8 @@ public class Product {
     private static Long counter = Long.valueOf(0);
 
     public Product(String name, BigDecimal price, Category category, BigDecimal discount, String description) {
-        this.id = counter++;
+        counter ++;
+        this.id = counter;
         this.name = name;
         this.price = price;
         this.category = category;

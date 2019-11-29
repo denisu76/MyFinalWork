@@ -53,44 +53,44 @@ public class ProductRepositoryDemo {
         }
 
         try {
-            System.out.println("repository.findById(2) = " + repository.findById(Long.valueOf(2)));
+            System.out.println("repository.findById(3) = " + repository.findById(Long.valueOf(3)));
         } catch (ItemNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-        System.out.println("Delete of (2)");
+        System.out.println("Delete of (3)");
         try {
-            repository.delete(Long.valueOf(2));
+            repository.delete(Long.valueOf(3));
         } catch (ItemNotFoundException ex){
             System.out.println(ex.getMessage());
         }
 
         validationService.printAll(repository);
 
-        System.out.println("Finf by id of (2)");
-        try {
-            System.out.println("repository.findById(2) = " + repository.findById(Long.valueOf(2)));
-        } catch (ItemNotFoundException ex){
-            System.out.println(ex.getMessage());
-        }
-        System.out.println("Delete of (2)");
-        try {
-            repository.delete(Long.valueOf(2));
-        } catch (ItemNotFoundException ex){
-            System.out.println(ex.getMessage());
-        }
-
-        System.out.println("new price = 2 for (3)");
-        validationService.setPriceById(repository, Long.valueOf(3), BigDecimal.valueOf(2));
+        System.out.println("Finf by id of (3)");
         try {
             System.out.println("repository.findById(3) = " + repository.findById(Long.valueOf(3)));
         } catch (ItemNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-
-        System.out.println("new discount = 10% for (3)");
-        validationService.setDiscountById(repository, Long.valueOf(3), BigDecimal.valueOf(0.1));
+        System.out.println("Delete of (3)");
         try {
-            System.out.println("repository.findById(3) = " + repository.findById(Long.valueOf(3)));
+            repository.delete(Long.valueOf(3));
+        } catch (ItemNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        System.out.println("new price = 2 for (4)");
+        validationService.setPriceById(repository, Long.valueOf(4), BigDecimal.valueOf(2));
+        try {
+            System.out.println("repository.findById(4) = " + repository.findById(Long.valueOf(4)));
+        } catch (ItemNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        System.out.println("new discount = 10% for (4)");
+        validationService.setDiscountById(repository, Long.valueOf(4), BigDecimal.valueOf(0.1));
+        try {
+            System.out.println("repository.findById(4) = " + repository.findById(Long.valueOf(4)));
         } catch (ItemNotFoundException ex){
             System.out.println(ex.getMessage());
         }
