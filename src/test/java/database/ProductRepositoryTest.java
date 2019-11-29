@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProductRepositoryTest {
 
     @Test
-    void findAll1() {
+    void findAll() {
         ProductRepository repository = new ProductRepository();
         assertNotNull(repository.findAll());
 
