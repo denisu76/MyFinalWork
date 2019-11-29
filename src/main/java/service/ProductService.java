@@ -13,9 +13,6 @@ public class ProductService {
         if (item.getName().isBlank()){
             throw new IllegalArgumentException("Name must be not empty!");
         }
-        if (item.getPrice() == null){
-            throw new IllegalArgumentException("Price must be not null!");
-        }
         if (item.getPrice().compareTo(BigDecimal.valueOf(0)) <= 0)
         {
             throw new IllegalArgumentException("Price must be > 0!");
