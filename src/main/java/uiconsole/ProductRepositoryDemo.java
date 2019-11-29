@@ -98,7 +98,6 @@ public class ProductRepositoryDemo {
         System.out.println("set discount = 60% for FISH");
         validationService.setDiscountByCategory(repository, Category.FISH, BigDecimal.valueOf(0.6));
         validationService.printAll(repository);
-        System.out.println("THE END");
 
     }
 }
