@@ -74,7 +74,7 @@ class ProductServiceTest {
     void setPriceById() {
         ProductRepository repository = new ProductRepository();
         ProductService validationService = new ProductService();
-        Product.setCounter(Long.valueOf(0));
+        ProductRepository.setCounter(Long.valueOf(0));
         Product product2 = new Product("Salmon", BigDecimal.valueOf(10), Category.FISH, BigDecimal.valueOf(0), "Big latvian fish");
         Product product3 = new Product("Apple", BigDecimal.valueOf(0.2), Category.FRUIT, BigDecimal.valueOf(0), "Tasty apples from Latvia");
         repository.save(product2);
@@ -95,7 +95,7 @@ class ProductServiceTest {
     void setDiscountById() {
         ProductRepository repository = new ProductRepository();
         ProductService validationService = new ProductService();
-        Product.setCounter(Long.valueOf(0));
+        ProductRepository.setCounter(Long.valueOf(0));
         Product product2 = new Product("Salmon", BigDecimal.valueOf(10), Category.FISH, BigDecimal.valueOf(0.2), "Big latvian fish");
         Product product3 = new Product("Apple", BigDecimal.valueOf(0.2), Category.FRUIT, BigDecimal.valueOf(0.3), "Tasty apples from Latvia");
         repository.save(product2);

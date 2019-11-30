@@ -11,11 +11,12 @@ public class Product {
     private Category category;
     private BigDecimal discount;
     private String description;
-    private static Long counter = Long.valueOf(0);
+    //private static Long counter = Long.valueOf(0);
 
     public Product(String name, BigDecimal price, Category category, BigDecimal discount, String description) {
-        counter ++;
-        this.id = counter;
+        //counter ++;
+        //this.id = counter;
+        this.id = Long.valueOf(0);
         this.name = name;
         this.price = price;
         this.category = category;
@@ -112,8 +113,14 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-
+ /*
     public static void setCounter(Long counter) {
         Product.counter = counter;
+    }
+
+ */
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -30,7 +30,7 @@ class ProductRepositoryTest {
         Product product4;
         ProductRepository repository = new ProductRepository();
         List<Product> findProducts = new ArrayList<Product>();
-        Product.setCounter(Long.valueOf(0));
+        repository.setCounter(Long.valueOf(0));
         Product product2 = new Product("Salmon", BigDecimal.valueOf(10), Category.FISH, BigDecimal.valueOf(0), "Big latvian fish");
         Product product3 = new Product("Apple", BigDecimal.valueOf(0.2), Category.FRUIT, BigDecimal.valueOf(0), "Tasty apples from Latvia");
         repository.save(product2);
@@ -57,7 +57,7 @@ class ProductRepositoryTest {
     void delete() {
         ProductRepository repository = new ProductRepository();
         List<Product> findProducts = new ArrayList<Product>();
-        Product.setCounter(Long.valueOf(0));
+        ProductRepository.setCounter(Long.valueOf(0));
         Product product2 = new Product("Salmon", BigDecimal.valueOf(10), Category.FISH, BigDecimal.valueOf(0), "Big latvian fish");
         repository.save(product2);
         findProducts = repository.findAll();

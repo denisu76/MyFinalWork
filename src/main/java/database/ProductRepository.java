@@ -8,6 +8,7 @@ import service.*;
 
 public class ProductRepository implements Repository<Product>{
     private Map<Long, Product> database = new HashMap<Long, Product>();
+    private static Long counter = Long.valueOf(0);
 
     public List<Product> findAll(){
         return new ArrayList<Product>(database.values());
@@ -23,7 +24,13 @@ public class ProductRepository implements Repository<Product>{
     }
 
     public void save(Product item) throws IllegalArgumentException{
-        database.put(item.getId(), item);
+        if (item.getId() != Long.valueOf(0)){
+            database.put(item.getId(), item);
+        } else {
+            counter++;
+            item.setId(Long.valueOf(counter));
+            database.put(Long.valueOf(counter), item);
+        }
     }
 
     public void delete(Long id) throws ItemNotFoundException{
@@ -32,5 +39,9 @@ public class ProductRepository implements Repository<Product>{
         if (resultProduct == null){
             throw new ItemNotFoundException("Can't delete this Product!");
         }
+    }
+
+    public static void setCounter(Long counter) {
+        ProductRepository.counter = counter;
     }
 }
